@@ -59,25 +59,3 @@ export const revokeRefreshToken = async (token) => {
   await db.query("DELETE FROM refresh_tokens WHERE token = $1", [token]);
 };
 
-// import jwt from "jsonwebtoken";
-// import dotenv from "dotenv";
-
-// dotenv.config();
-
-// const JWT_SECRET = process.env.JWT_SECRET;
-
-// export const generateToken = (user) => {
-//   return jwt.sign(
-//     { id: user.id, role: user.role }, // Payload: user ID and role
-//     JWT_SECRET,
-//     { expiresIn: "1h" } // Token expires in 1 hour
-//   );
-// };
-
-// export const verifyToken = (token) => {
-//   try {
-//     return jwt.verify(token, JWT_SECRET);
-//   } catch (error) {
-//     throw new Error("Invalid or expired token");
-//   }
-// };
